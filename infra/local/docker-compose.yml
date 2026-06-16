@@ -1,0 +1,25 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: pricingia-postgres
+    environment:
+      POSTGRES_DB: pricingia_db
+      POSTGRES_USER: pricingia_user
+      POSTGRES_PASSWORD: pricingia_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - pricingia_postgres_data:/var/lib/postgresql/data
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: pricingia-rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: pricingia_user
+      RABBITMQ_DEFAULT_PASS: pricingia_pass
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+volumes:
+  pricingia_postgres_data:
