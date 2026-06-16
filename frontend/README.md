@@ -1,26 +1,44 @@
-# Frontend — Pricing IA SaaS
+# Frontend — Pricing IA (Vite)
 
-Placeholder do dashboard do lojista.
+Frontend do **Pricing IA** (SaaS B2B para Shopify merchants).
 
-## Stack planejada
+## Stack
 
-- React
-- TypeScript
+- React + TypeScript
 - Vite
+- Tailwind CSS
+- React Router
 
 ## Status
 
-Não implementado nesta fase. O frontend será criado após a fundação do backend estar sólida (Etapa 1 concluída).
+- Sem autenticação real (login é placeholder)
+- Sem integração real com backend (dados mockados em `src/mocks`)
 
-## Escopo futuro
+## Rodar localmente
 
-- Login / instalação via Shopify
-- Dashboard de precificação
-- Configuração de margem
-- Histórico de alterações
-- Simulador de preço
-- Plano e assinatura
+Na pasta `frontend/`:
 
-## Comandos
+```bash
+npm install
+npm run dev
+```
 
-A definir quando o projeto Vite for inicializado.
+Abra: `http://localhost:5173`
+
+## Scripts
+
+- `npm run dev`
+- `npm run build`
+- `npm run lint`
+- `npm run preview`
+
+## Páginas
+
+- `/` Landing
+- `/login` Login placeholder
+- `/app/dashboard`
+- `/app/products`
+- `/app/pricing-decisions`
+- `/app/settings`
+- `*` Not Found
+
