@@ -42,8 +42,13 @@ public abstract class IntegrationTest {
 		registry.add("spring.rabbitmq.port", RabbitMqTestContainer::getAmqpPort);
 		registry.add("spring.rabbitmq.username", () -> "pricingia_user");
 		registry.add("spring.rabbitmq.password", () -> "pricingia_pass");
+		registry.add("spring.rabbitmq.listener.simple.default-requeue-rejected", () -> "false");
 
 		registry.add("management.endpoints.web.exposure.include", () -> "health,info");
+		registry.add("pricingia.shopify.webhook.secret", () -> "integration-test-secret");
+		registry.add("pricingia.shopify.webhooks.exchange", () -> "shopify.webhooks.exchange");
+		registry.add("pricingia.shopify.webhooks.queue", () -> "shopify.webhooks.received.queue");
+		registry.add("pricingia.shopify.webhooks.routing-key", () -> "shopify.webhook.received");
 	}
 }
 
